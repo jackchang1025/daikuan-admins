@@ -1,0 +1,111 @@
+<form id="add-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    {:token()}
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Group')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_select('group[]', $groupdata, null, ['class'=>'form-control selectpicker', 'multiple'=>'', 'data-rule'=>'required'])}
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="username" class="control-label col-xs-12 col-sm-2">{:__('Username')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="username" name="row[username]" value="" data-rule="required;username" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email" class="control-label col-xs-12 col-sm-2">{:__('Email')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="email" class="form-control" id="email" name="row[email]" value="" data-rule="required;email" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="mobile" class="control-label col-xs-12 col-sm-2">{:__('Mobile')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="mobile" name="row[mobile]" value="" data-rule="mobile" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="nickname" class="control-label col-xs-12 col-sm-2">{:__('Nickname')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="nickname" name="row[nickname]" autocomplete="off" value="" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password" class="control-label col-xs-12 col-sm-2">{:__('Password')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="password" class="form-control" id="password" name="row[password]" autocomplete="new-password" value="" data-rule="required;password" />
+        </div>
+    </div>
+     <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('有效期')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-dietime" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD" data-use-current="true" name="row[dietime]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="num" class="control-label col-xs-12 col-sm-2">{:__('允许几个设备同时在线')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" class="form-control" id="num" name="row[num]" autocomplete="off" value="" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('客服状态')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="radio">
+                <label for="row[kefu_status]-normal"><input id="row[kefu_status]-normal" checked="checked" name="row[kefu_status]" type="radio" value="1"> 显示</label> 
+                <label for="row[kefu_status]-hidden"><input id="row[kefu_status]-hidden" name="row[kefu_status]" type="radio" value="0"> 关闭</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="site_name" class="control-label col-xs-12 col-sm-2">{:__('站点名称')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="site_name" name="row[site_name]" autocomplete="off" value="" data-rule="" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="domain" class="control-label col-xs-12 col-sm-2">{:__('站点域名')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="domain" name="row[domain]" autocomplete="off" value="" data-rule="" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="fan_domain" class="control-label col-xs-12 col-sm-2">{:__('站点泛解析域名')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="fan_domain" name="row[fan_domain]" placeholder="为空则关闭泛解析" autocomplete="off" value="" data-rule="" />
+        </div>
+    </div>
+     <div class="form-group">
+        <label for="company_name" class="control-label col-xs-12 col-sm-2">{:__('合同公司名称')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="company_name" name="row[company_name]" autocomplete="off" value="" data-rule="" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('合同公章')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-company_image" class="form-control" size="1" name="row[company_image]" type="text" value="">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="faupload-company_image" class="btn btn-danger faupload" data-input-id="c-company_image" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp,image/webp" data-multiple="false" data-preview-id="p-company_image"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-company_image" class="btn btn-primary fachoose" data-input-id="c-company_image" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-company_image"></span>
+            </div>
+            <ul class="row list-inline faupload-preview" id="p-company_image"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[status]', ['normal'=>__('Normal'), 'hidden'=>__('Hidden')])}
+        </div>
+    </div>
+    <div class="form-group hidden layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

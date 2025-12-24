@@ -1,0 +1,126 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-name" data-rule="required" class="form-control" name="row[name]" type="text" value="{$row.name|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Khyh')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-khyh" data-rule="required" class="form-control" name="row[khyh]" type="text" value="{$row.khyh|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Yhkh')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-yhkh" data-rule="required" class="form-control" name="row[yhkh]" type="text" value="{$row.yhkh|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Khdz')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-khdz" class="form-control" name="row[khdz]" type="text" value="{$row.khdz|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Beizhu')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-beizhu" class="form-control" name="row[beizhu]" type="text" value="{$row.beizhu|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Image')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-image" class="form-control" size="50" name="row[image]" type="text" value="{$row.image|htmlentities}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="faupload-image" class="btn btn-danger faupload" data-input-id="c-image" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp,image/webp" data-multiple="false" data-preview-id="p-image"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-image" class="btn btn-primary fachoose" data-input-id="c-image" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-image"></span>
+            </div>
+            <ul class="row list-inline faupload-preview" id="p-image"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Image2')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-image2" class="form-control" size="50" name="row[image2]" type="text" value="{$row.image2|htmlentities}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="faupload-image2" class="btn btn-danger faupload" data-input-id="c-image2" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp,image/webp" data-multiple="false" data-preview-id="p-image2"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-image2" class="btn btn-primary fachoose" data-input-id="c-image2" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-image2"></span>
+            </div>
+            <ul class="row list-inline faupload-preview" id="p-image2"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('是否开启微信支付宝收款')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="radio">
+                <label ><input id="row[sanfang]1" name="row[sanfang]" type="radio" value="0" {if $row['sanfang']=="0"}checked{/if} /> 关闭</label> 
+                <label><input id="row[sanfang]2" name="row[sanfang]" type="radio" value="1" {if $row['sanfang']=="1"}checked{/if} /> 开启</label> 
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('微信收款码')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-wximage" class="form-control" size="50" name="row[wximage]" type="text" value="{$row.wximage|htmlentities}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="faupload-wximage" class="btn btn-danger faupload" data-input-id="c-wximage" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp,image/webp" data-multiple="false" data-preview-id="p-wximage"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-wximage" class="btn btn-primary fachoose" data-input-id="c-wximage" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-wximage"></span>
+            </div>
+            <ul class="row list-inline faupload-preview" id="p-wximage"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('支付宝收款码')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-zfbimage" class="form-control" size="50" name="row[zfbimage]" type="text" value="{$row.zfbimage|htmlentities}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="faupload-zfbimage" class="btn btn-danger faupload" data-input-id="c-zfbimage" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp,image/webp" data-multiple="false" data-preview-id="p-zfbimage"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-zfbimage" class="btn btn-primary fachoose" data-input-id="c-zfbimage" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-zfbimage"></span>
+            </div>
+            <ul class="row list-inline faupload-preview" id="p-zfbimage"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('是否开启上传支付凭证页面')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="radio">
+                <label ><input id="row[zfupload]1" name="row[zfupload]" type="radio" value="0" {if $row['zfupload']=="0"}checked{/if} /> 关闭</label> 
+                <label><input id="row[zfupload]2" name="row[zfupload]" type="radio" value="1" {if $row['zfupload']=="1"}checked{/if} /> 开启</label> 
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('支付凭证')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-zfimage" class="form-control" size="50" name="row[zfimage]" type="text" value="{$row.zfimage|htmlentities}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="faupload-zfimage" class="btn btn-danger faupload" data-input-id="c-zfimage" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp,image/webp" data-multiple="false" data-preview-id="p-zfimage"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-zfimage" class="btn btn-primary fachoose" data-input-id="c-zfimage" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-zfimage"></span>
+            </div>
+            <ul class="row list-inline faupload-preview" id="p-zfimage"></ul>
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+        </div>
+    </div>
+</form>

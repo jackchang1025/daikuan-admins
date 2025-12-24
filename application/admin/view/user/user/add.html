@@ -1,0 +1,51 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="c-username" class="control-label col-xs-12 col-sm-2">{:__('姓名')}:</label>
+        <div class="col-xs-12 col-sm-4">
+            <input id="c-username" data-rule="required" class="form-control" name="row[username]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-mobile" class="control-label col-xs-12 col-sm-2">{:__('Mobile')}:</label>
+        <div class="col-xs-12 col-sm-4">
+            <input id="c-mobile" data-rule="mobile" class="form-control" name="row[mobile]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-sfz" class="control-label col-xs-12 col-sm-2">{:__('身份证号')}:</label>
+        <div class="col-xs-12 col-sm-4">
+            <input id="c-sfz" data-rule="required" class="form-control" name="row[sfz]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-khyh" class="control-label col-xs-12 col-sm-2">{:__('开户银行')}:</label>
+        <div class="col-xs-12 col-sm-4">
+            <input id="c-khyh" data-rule="required" class="form-control" name="row[khyh]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-yhk_num" class="control-label col-xs-12 col-sm-2">{:__('银行卡号')}:</label>
+        <div class="col-xs-12 col-sm-4">
+            <input id="c-yhk_num" data-rule="required" class="form-control" name="row[yhk_num]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-khdz" class="control-label col-xs-12 col-sm-2">{:__('开户地址')}:</label>
+        <div class="col-xs-12 col-sm-4">
+            <input id="c-khdz" class="form-control" name="row[khdz]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[status]', ['normal'=>__('Normal'), 'hidden'=>__('Hidden')], )}
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

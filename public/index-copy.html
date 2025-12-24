@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang=zh-CN><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>daikuan</title><script>var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') || CSS.supports('top: constant(a)'))
+            document.write('<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' + (coverSupport ? ', viewport-fit=cover' : '') + '" />')</script><link rel=stylesheet href=/static/index.2da1efab.css></head><body><noscript><strong>Please enable JavaScript to continue.</strong></noscript><div id=app></div><script src=/static/js/chunk-vendors.05d3cfc8.js></script><script src=/static/js/index.48c04ce8.js></script>
+            <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script type="text/javascript" charset="utf-8">
+                $.get('/api/common/domain')
+                    .done(function(data) {
+                        console.log(data)
+                        if(data.code==200)
+                        {
+                            var list = data.data
+                        var num = 0
+                        for (const key in list) {
+                              console.log(list[key].domain);
+                              if (window.location.hostname == list[key].domain) {
+                                  num++;
+                              // 方式1: 重定向到其他页面
+                            //   window.location.href = 'https://您的正常域名.com';
+                              
+                              // 方式2: 显示禁止访问页面
+                            //   document.body.innerHTML = '<h1>禁止访问</h1><p>该域名已被禁止访问</p>';
+                              
+                              // 方式3: 关闭页面
+                              // window.close();
+                            }
+                        }
+                         if (num==0) {
+                              // 方式1: 重定向到其他页面
+                            //   window.location.href = 'https://您的正常域名.com';
+                              
+                              // 方式2: 显示禁止访问页面
+                              document.body.innerHTML = '<h1>禁止访问</h1><p>该域名已被禁止访问</p>';
+                              
+                              // 方式3: 关闭页面
+                              // window.close();
+                            }
+                        }
+                    })
+                
+            </script>
+            </body></html>
