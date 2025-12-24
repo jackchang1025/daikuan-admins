@@ -40,7 +40,7 @@ return array (
     'custom' => '自定义',
   ),
   'moban' => '1',
-  'kefustatus' => '0',
+  'kefustatus' => '1',
   'kefunum' => '69120105222c8',
   'yuming' => '0',
   'kefushow' => '0',
